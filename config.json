@@ -1,0 +1,17 @@
+{
+  "params":
+  {
+    "local server": "True",
+    "basedir" : "os.path.abspath(os.path.dirname(__file__))",
+    "local_uri":"sqlite:///'+os.path.join(basedir,'data.sqlite')",
+    "prod_uri":"sqlite:///'+os.path.join(basedir,'data.sqlite')",
+    "fb_url":"https://facebook.com/codingthunder",
+    "tw_url":"https://twitter.com/codingthunder",
+    "gh_url":"https://github.com/codingthunder",
+    "blog_name":"Social Blog",
+    "gmail-user": "gmail-id",
+    "gmail-password":"gmail-password",
+    "no_of_posts": 3,
+    "upload_location":"img-path"
+  }
+}
