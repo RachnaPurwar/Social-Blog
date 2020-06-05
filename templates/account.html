@@ -1,0 +1,67 @@
+{% extends "layout_login.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <div class="jumbotron">
+  <div align='center'>
+    <h1 >Welcome {{user.name}}</h1>
+<img align='center' width="200" height="200" src="{{ url_for('static', filename='img/' + user.profile_image) }}" alt="default_profile.png"/>
+    <p>{{user.email }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <form  method="POST"  enctype="multipart/form-data">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control"  id="name" name='name' required data-validation-required-message="Please enter your name." value="{{user.name}}" >
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your tagLine." value="{{user.email}}" >
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Phone Number</label>
+                <input type="text" class="form-control"  name="phone_num" id="slug" required data-validation-required-message="Please enter your slug." value="{{user.phone_num}}" >
+                <p class="help-block text-danger"></p>
+              </div>
+
+                 <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+               <label>Browse Image</label></br>
+
+             <input type="file" class="form-control-file"  id="picture"  name="file"  >
+
+              </div>
+            </div>
+
+
+
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit"  formaction="/account/{{user.sno}}" onclick="myFunction()" class="btn btn-primary" >Update</button>
+            <button type="submit"  formaction="/admin/{{user.name}}" class="btn btn-primary float-right" id="sendMessageButton">Back</button>
+
+            </div> </div>
+          </form>
+<script>
+function myFunction() {
+  alert("Updated successfully");
+}
+</script>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    {% endblock %}
